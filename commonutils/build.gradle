@@ -5,7 +5,7 @@ plugins {
 
 
 ext {
-    bintrayRepo = 'cUtils'
+    bintrayRepo = 'CUtils'
     bintrayName = 'commonutils'
 
     publishedGroupId = 'cn.almostlover.sdk'

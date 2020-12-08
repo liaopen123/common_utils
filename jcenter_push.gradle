@@ -41,13 +41,19 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 dokka {
     outputFormat = 'html'
     outputDirectory = "$buildDir/javadoc"
+    noAndroidSdkLink = true  //解决Exception while loading package-list from ExternalDocumentationLinkImpl
 }
+
+
 
 tasks.withType(Javadoc) {
     options.addStringOption('Xdoclint:none', '-quiet')
     options.addStringOption('encoding', 'UTF-8')
     options.addStringOption('charSet', 'UTF-8')
 }
+
+
+
 artifacts {
     archives javadocJar
     archives sourcesJar
